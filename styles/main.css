@@ -21,7 +21,7 @@
 	text-align: center;
 	background-color: transparent;
 	font-family: 'Oxygen';
-	font-weight: 300;
+	font-weight: 'Light';
 	color: var(--text-col)
 	transition-timing-function: linear;
 }
@@ -35,7 +35,7 @@ body {
 }
 
 h1 {
-	font-weight: 700;
+	font-weight: 'Bold';
 }
 
 h2 {
