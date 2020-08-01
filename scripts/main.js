@@ -12,6 +12,12 @@ function set_text_sizes( width, queries, rels ) {
 	}
 }
 
+function on_resize() {
+	width = document.documentElement.clientWidth;
+	set_text_sizes( width, queries, rels );
+	doc_all.style.setProperty( '--width', width+'px' );
+}
+
 //defining property relations
 const rel_text = x => 10 + ( 14-10 )*( x-300 )/( 1300-300 );
 const rel_h1 = x => 20 + ( 24-18 )*( width-300 )/( 1300-300 );
@@ -32,8 +38,4 @@ set_text_sizes( width, queries, rels );
 let click_count = 0;
 
 //looking for window resizing
-window.addEventListener( "resize", function() {
-	width = document.documentElement.clientWidth;
-	set_text_sizes( width, queries, rels );
-	doc_all.style.setProperty( '--width', width+'px' );
-});
+window.addEventListener( "resize", on_resize);
