@@ -1,7 +1,9 @@
 /*Primary style sheet*/
 
 /*importing external assets*/
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300');
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400');
+@import url('https://fonts.googleapis.com/css?family=Oxygen:700');
 
 /*defining variables to be used throughout document*/
 :root {
@@ -21,7 +23,7 @@
 	text-align: center;
 	background-color: transparent;
 	font-family: 'Oxygen';
-	font-weight: 'Light';
+	font-weight: 300;
 	color: var(--text-col)
 	transition-timing-function: linear;
 }
@@ -35,7 +37,7 @@ body {
 }
 
 h1 {
-	font-weight: 'Bold';
+	font-weight: 700;
 }
 
 h2 {
