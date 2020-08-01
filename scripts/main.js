@@ -3,7 +3,7 @@
 /////////////////////
 
 //getting screen width
-width = document.documentElement.clientWidth;
+let width = document.documentElement.clientWidth;
 
 //defining functions
 function set_text_sizes( width, queries, rels ) {
