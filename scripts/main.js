@@ -32,8 +32,8 @@ set_text_sizes( width, queries, rels );
 let click_count = 0;
 
 //looking for window resizing
-window.addEventListener( "resize", function() ) {
+window.addEventListener( "resize", function() {
 	width = document.documentElement.clientWidth;
 	set_text_sizes( width, queries, rels );
-	doc_all.style.setProperty( '--width', width+'px' )
-}
+	doc_all.style.setProperty( '--width', width+'px' );
+});
