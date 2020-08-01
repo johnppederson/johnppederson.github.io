@@ -35,4 +35,5 @@ let click_count = 0;
 window.addEventListener( "resize", function() ) {
 	width = document.documentElement.clientWidth;
 	set_text_sizes( width, queries, rels );
+	doc_all.style.setProperty( '--width', width+'px' )
 }

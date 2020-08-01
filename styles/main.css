@@ -9,7 +9,6 @@
 
 /*defining variables to be used throughout document*/
 :root {
-	--text-size: 14pt;
 	--width: 100vw;
 	--text-col: rgb(0,48,87);
 	--curr-col: rgb(100,148,187);
@@ -22,7 +21,7 @@
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: var(--text-size);
+	font-size: 14pt;
 	vertical-align: middle;
 	text-align: center;
 	background-color: transparent;
