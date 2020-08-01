@@ -8,7 +8,7 @@ width = document.documentElement.clientWidth;
 //defining functions
 function set_text_sizes( width, queries, rels ) {
 	for ( i=0; i < queries.length; i++ ) {
-		queries[i].style.setProperty( 'font-size', rels[i](width)+'pt' )
+		queries[i].style.setProperty( 'font-size', rels[i](width)+'pt' );
 	}
 }
 
@@ -27,12 +27,12 @@ const doc_h2 = document.querySelector( 'h2' );
 const queries = [ doc_all, doc_h1 , doc_2 ];
 
 //setting initial values
-set_text_sizes( width, queries, rels )
+set_text_sizes( width, queries, rels );
 
 let click_count = 0;
 
 //looking for window resizing
 window.addEventListener( "resize", function() ) {
 	width = document.documentElement.clientWidth;
-	set_text_sizes( width, queries, rels )
+	set_text_sizes( width, queries, rels );
 }
