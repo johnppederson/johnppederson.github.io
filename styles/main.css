@@ -1,0 +1,40 @@
+/*Primary style sheet*/
+
+/*importing external assets*/
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+/*defining variables to be used throughout document*/
+:root {
+	--text-size: 14pt;
+	--width: 100vw;
+	--text-col: rgb(0,48,87);
+}
+
+/*setting default formatting*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: var(--text-size);
+	vertical-align: middle;
+	text-align: center;
+	background-color: transparent;
+	font-family: 'Oxygen-300';
+	color: var(--text-col)
+	transition-timing-function: linear;
+}
+
+/*defining element formatting*/
+
+body {
+	height: 100%;
+	width: var(--width);
+	overflow-x: hidden;
+}
+
+h1 {
+}
+
+h2 {
+}
