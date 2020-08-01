@@ -1,4 +1,6 @@
-/*Primary style sheet*/
+/********************/
+/*PRIMARY STYLESHEET*/
+/********************/
 
 /*importing external assets*/
 @import url('https://fonts.googleapis.com/css?family=Oxygen:300');
@@ -10,6 +12,8 @@
 	--text-size: 14pt;
 	--width: 100vw;
 	--text-col: rgb(0,48,87);
+	--curr-col: rgb(100,148,187);
+	--hover-col: rgb(50,98,137);
 }
 
 /*setting default formatting*/
@@ -29,6 +33,7 @@
 }
 
 /*defining element formatting*/
+/*****************************/
 
 body {
 	height: 100%;
@@ -42,3 +47,26 @@ h1 {
 
 h2 {
 }
+
+a {
+	transition-duration: 0.1s;
+}
+
+/*defining class formatting*/
+/***************************/
+
+.header {
+	position: sticky;
+}
+
+.menu_items a:hover {
+	background-color: var(--hover-col);
+}
+
+.current_page {
+	background-color: var(--curr-col);
+}
+
+
+
+
