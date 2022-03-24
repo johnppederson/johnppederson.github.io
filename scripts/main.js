@@ -8,34 +8,38 @@ let width = document.documentElement.clientWidth;
 //defining functions
 function set_text_sizes( width, queries, rels ) {
 	for ( i=0; i < queries.length; i++ ) {
-		queries[i].style.setProperty( 'font-size', rels[i](width)+'pt' );
+        for ( j=0; j < queries[i].length; j++ ) {
+		    queries[i][j].style.setProperty( 'font-size', rels[i](width)+'pt' );
+        }
 	}
 }
 
 function on_resize() {
 	width = document.documentElement.clientWidth;
 	set_text_sizes( width, queries, rels );
-	doc_all.style.setProperty( '--width', width+'px' );
+    doc_all.style.setProperty( '--width', width+'px' );
 }
 
 //defining property relations
-const rel_text = x => 10 + ( 14-10 )*( x-300 )/( 1300-300 );
-const rel_h1 = x => 20 + ( 24-18 )*( width-300 )/( 1300-300 );
-const rel_h2 = x => 8 + ( 16-8 )*( width-300 )/( 1300-300 );
+const rel_text = x => 12 + ( 16-12 )*( x-300 )/( 1300-300 );
+const rel_h1 = x => 24 + ( 32-24 )*( x-300 )/( 1300-300 );
+const rel_h2 = x => 16 + ( 18-16 )*( x-300 )/( 1300-300 );
+const rel_h3 = x => 20 + ( 28-20 )*( x-300 )/( 1300-300 );
+const rel_h4 = x => 18 + ( 24-18 )*( x-300 )/( 1300-300 );
 
-const rels = [ rel_text, rel_h1, rel_h2 ];
+const rels = [ rel_text, rel_h1, rel_h2, rel_h3, rel_h4 ];
 
 //setting document queries
-const doc_all = document.querySelector( '*' );
-const doc_h1 = document.querySelector( 'h1' );
-const doc_h2 = document.querySelector( 'h2' );
+const doc_all = document.querySelectorAll( '*' );
+const doc_h1 = document.querySelectorAll( 'h1' );
+const doc_h2 = document.querySelectorAll( 'h2' );
+const doc_h3 = document.querySelectorAll( 'h3' );
+const doc_h4 = document.querySelectorAll( 'h4' );
 
-const queries = [ doc_all, doc_h1 , doc_2 ];
+const queries = [ doc_all, doc_h1, doc_h2, doc_h3, doc_h4 ];
 
 //setting initial values
 set_text_sizes( width, queries, rels );
-
-let click_count = 0;
 
 //looking for window resizing
 window.addEventListener( "resize", on_resize);

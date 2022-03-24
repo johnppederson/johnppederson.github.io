@@ -3,69 +3,185 @@
 /********************/
 
 /*importing external assets*/
-@import url('https://fonts.googleapis.com/css?family=Oxygen:300');
-@import url('https://fonts.googleapis.com/css?family=Oxygen:400');
-@import url('https://fonts.googleapis.com/css?family=Oxygen:700');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 /*defining variables to be used throughout document*/
 :root {
-	--width: 100vw;
-	--text-col: rgb(0,48,87);
-	--curr-col: rgb(100,148,187);
-	--hover-col: rgb(50,98,137);
+    --width: 100vw;
+    --text-col: rgb(0,0,0);
+    --curr-col: rgb(150,150,150);
+    --hover-col: rgb(100,100,100);
 }
 
 /*setting default formatting*/
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 14pt;
-	vertical-align: middle;
-	text-align: center;
-	background-color: transparent;
-	font-family: 'Oxygen';
-	font-weight: 300;
-	color: var(--text-col)
-	transition-timing-function: linear;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 14pt;
+    vertical-align: middle;
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Fredoka';
+    font-weight: 300;
+    color: var(--text-col)
+    transition-timing-function: linear;
 }
 
 /*defining element formatting*/
 /*****************************/
 
 body {
-	height: 100%;
-	width: var(--width);
-	overflow-x: hidden;
+    height: 100%;
+    width: var(--width);
+    overflow-x: hidden;
 }
 
 h1 {
-	font-weight: 700;
+    font-weight: 700;
+    /*margin: 1vh 0vw 1vh 0vw;*/
 }
 
 h2 {
+    /*margin: 1vh 0vw 1vh 0vw;*/
 }
 
 a {
-	transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+
+p {
+    text-align: left;
+    /*margin: 1vh 0vw 1vh 0vw;*/
+}
+
+hr {
+    background-color: gray;
+    height: 2.5px;
+    border: none;
+    margin: 2.5vh 5vw 1vh 5vw;
 }
 
 /*defining class formatting*/
 /***************************/
 
+.wrapper {
+    margin: 1vh 2vw 1vh 2vw;
+}
+
 .header {
-	position: sticky;
+    position: sticky;
 }
 
 .menu_items a:hover {
-	background-color: var(--hover-col);
+    background-color: var(--hover-col);
 }
 
 .current_page {
-	background-color: var(--curr-col);
+    background-color: var(--curr-col);
 }
 
+.portrait {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 1vw;
+    margin: 1vh 1vw 1vh 1vw;
+}
 
+.svg {
+    width: 5vw;
+    height: 5vw;
+}
 
+/*defining timeline formatting*/
+/******************************/
 
+.timeline {
+    position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 0.5vw;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50vw;
+    margin-left: -0.25vw;
+}
+
+/* Container around content */
+.container {
+    position: relative;
+    padding: 1vh 5vw 0vh 5vw;
+    width: 50vw;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    right: 8.5vw;
+    background-color: white;
+    border: 0.5vw solid #CC7368;
+    top: 2.75vh;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0vw;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50vw;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 3.8vh;
+    width: 0;
+    z-index: 1;
+    right: 14vw;
+    border: medium solid #C1E5EA;
+    border-width: 1vw 0 1vw 1vw;
+    border-color: transparent transparent transparent #C1E5EA;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 3.8vh;
+    width: 0;
+    z-index: 1;
+    left: 4vw;
+    border: medium solid #C1E5EA;
+    border-width: 1vw 1vw 1vw 0;
+    border-color: transparent #C1E5EA transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -1.5vw;
+}
+
+/* The actual content */
+.content {
+    background-color: #C1E5EA;
+    position: relative;
+    width: 40vw;
+    padding: 5vh 0 5vh 0;
+    border-radius: 0.5vw;
+}
