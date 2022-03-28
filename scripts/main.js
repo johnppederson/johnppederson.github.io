@@ -16,18 +16,20 @@ function set_text_sizes( width, queries, rels ) {
 
 function on_resize() {
 	width = document.documentElement.clientWidth;
+    console.log(width);
 	set_text_sizes( width, queries, rels );
     doc_all.style.setProperty( '--width', width+'px' );
 }
 
 //defining property relations
-const rel_text = x => 12 + ( 16-12 )*( x-300 )/( 1300-300 );
-const rel_h1 = x => 24 + ( 32-24 )*( x-300 )/( 1300-300 );
-const rel_h2 = x => 16 + ( 18-16 )*( x-300 )/( 1300-300 );
-const rel_h3 = x => 20 + ( 28-20 )*( x-300 )/( 1300-300 );
-const rel_h4 = x => 18 + ( 24-18 )*( x-300 )/( 1300-300 );
+const rel_text = x => 10 + ( 8 )*( x-300 )/( 1600-300 );
+const rel_h1 = x => 16 + ( 8 )*( x-300 )/( 1300 );
+const rel_h2 = x => 12 + ( 8 )*( x-300 )/( 1300 );
+const rel_h3 = x => 14 + ( 8 )*( x-300 )/( 1300 );
+const rel_h4 = x => 12 + ( 8 )*( x-300 )/( 1300 );
+const rel_h5 = x => 8 + ( 8 )*( x-300 )/( 1300 );
 
-const rels = [ rel_text, rel_h1, rel_h2, rel_h3, rel_h4 ];
+const rels = [ rel_text, rel_h1, rel_h2, rel_h3, rel_h4, rel_h5 ];
 
 //setting document queries
 const doc_all = document.querySelectorAll( '*' );
@@ -35,8 +37,9 @@ const doc_h1 = document.querySelectorAll( 'h1' );
 const doc_h2 = document.querySelectorAll( 'h2' );
 const doc_h3 = document.querySelectorAll( 'h3' );
 const doc_h4 = document.querySelectorAll( 'h4' );
+const doc_h5 = document.querySelectorAll( 'h5' );
 
-const queries = [ doc_all, doc_h1, doc_h2, doc_h3, doc_h4 ];
+const queries = [ doc_all, doc_h1, doc_h2, doc_h3, doc_h4, doc_h5 ];
 
 //setting initial values
 set_text_sizes( width, queries, rels );

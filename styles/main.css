@@ -47,6 +47,14 @@ h2 {
     /*margin: 1vh 0vw 1vh 0vw;*/
 }
 
+h4 {
+    font-weight: 700;
+}
+
+h5 {
+    font-style: italic;
+}
+
 a {
     transition-duration: 0.1s;
 }
@@ -66,12 +74,20 @@ hr {
 /*defining class formatting*/
 /***************************/
 
-.wrapper {
-    margin: 1vh 2vw 1vh 2vw;
-}
 
 .header {
-    position: sticky;
+    /*position: sticky;
+    background-color: white;
+    top: 0;*/
+    padding: 0vh 5vw 0vh 5vw;
+}
+
+.bio {
+    padding: 0vh 5vw 0vh 5vw;
+}
+
+.footer {
+    padding: 0vh 5vw 0vh 5vw;
 }
 
 .menu_items a:hover {
@@ -83,8 +99,8 @@ hr {
 }
 
 .portrait {
-    width: 20vw;
-    height: 20vw;
+    width: 43.2vh;
+    height: 54.0vh;
     border-radius: 1vw;
     margin: 1vh 1vw 1vh 1vw;
 }
@@ -92,6 +108,7 @@ hr {
 .svg {
     width: 5vw;
     height: 5vw;
+    margin: 2vh 0.5vw 2vh 0.5vw;
 }
 
 /*defining timeline formatting*/
@@ -99,37 +116,40 @@ hr {
 
 .timeline {
     position: relative;
+    width: 100vw;
+    margin: 1vh 0 0 0;
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 0.5vw;
+    width: 1vh;
+    border-radius: 1vh;
     background-color: black;
     top: 0;
     bottom: 0;
     left: 50vw;
-    margin-left: -0.25vw;
+    margin-left: -0.5vh;
 }
 
 /* Container around content */
 .container {
     position: relative;
-    padding: 1vh 5vw 0vh 5vw;
     width: 50vw;
 }
 
 /* The circles on the timeline */
 .container::after {
-    content: '';
+    content: ' ';
     position: absolute;
-    width: 2vw;
-    height: 2vw;
-    right: 8.5vw;
+    width: 4vh;
+    height: 4vh;
+    left: 50vw;
+    margin-left: -3vh;
     background-color: white;
-    border: 0.5vw solid #CC7368;
-    top: 2.75vh;
+    border: 1vh solid black;
+    top: 2vh;
     border-radius: 50%;
     z-index: 1;
 }
@@ -149,13 +169,14 @@ hr {
     content: " ";
     height: 0;
     position: absolute;
-    top: 3.8vh;
+    top: 3vh;
     width: 0;
     z-index: 1;
-    right: 14vw;
-    border: medium solid #C1E5EA;
-    border-width: 1vw 0 1vw 1vw;
-    border-color: transparent transparent transparent #C1E5EA;
+    left: 50vw;
+    margin-left: -6vw;
+    border: medium solid black;
+    border-width: 2vh 0 2vh 1vw;
+    border-color: transparent transparent transparent black;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -163,25 +184,26 @@ hr {
     content: " ";
     height: 0;
     position: absolute;
-    top: 3.8vh;
+    top: 3vh;
     width: 0;
     z-index: 1;
-    left: 4vw;
-    border: medium solid #C1E5EA;
-    border-width: 1vw 1vw 1vw 0;
-    border-color: transparent #C1E5EA transparent transparent;
+    left: 0vw;
+    margin-left: 5vw;
+    border: medium solid black;
+    border-width: 2vh 1vw 2vh 0;
+    border-color: transparent black transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
 .right::after {
-    left: -1.5vw;
+    left: 0vw;
 }
 
 /* The actual content */
 .content {
-    background-color: #C1E5EA;
+    background-color: inherit;
     position: relative;
-    width: 40vw;
-    padding: 5vh 0 5vh 0;
+    width: 35vw;
+    margin: 0 7.5vw 0 7.5vw;
     border-radius: 0.5vw;
 }
