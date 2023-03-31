@@ -3,13 +3,13 @@
 /********************/
 
 /*importing external assets*/
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /*defining variables to be used throughout document*/
 :root {
     --width: 100vw;
     --text-col: rgb(0,0,0);
-    --curr-col: rgb(150,150,150);
+    --curr-col: rgb(255,255,255);
     --hover-col: rgb(100,100,100);
 }
 
@@ -21,12 +21,13 @@
     outline: 0;
     font-size: 14pt;
     vertical-align: middle;
-    text-align: center;
+    text-align: left;
     background-color: transparent;
-    font-family: 'Fredoka';
+    font-family: 'Montserrat';
     font-weight: 300;
     color: var(--text-col)
     transition-timing-function: linear;
+    transition-duration: 0.5s;
 }
 
 /*defining element formatting*/
@@ -39,36 +40,50 @@ body {
 }
 
 h1 {
-    font-weight: 700;
-    /*margin: 1vh 0vw 1vh 0vw;*/
+    font-size: 32pt;
+    margin: 2vh 0vw 0.5vh 0vw;
+    text-align: center;
 }
 
 h2 {
-    /*margin: 1vh 0vw 1vh 0vw;*/
+    font-size: 18pt;
+    margin: 0vh 0vw 1vh 0vw;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18pt;
+    margin: 2vh 0vw 1.5vh 0vw;
+    text-align: center;
 }
 
 h4 {
-    font-weight: 700;
+    text-align: center;
 }
 
 h5 {
     font-style: italic;
+    margin: 2vh 0vw 2vh 0vw;
+    text-align: center;
 }
 
 a {
-    transition-duration: 0.1s;
+    text-align: center;
 }
 
 p {
-    text-align: left;
     /*margin: 1vh 0vw 1vh 0vw;*/
 }
 
 hr {
     background-color: gray;
-    height: 2.5px;
+    height: 1px;
     border: none;
     margin: 2.5vh 5vw 1vh 5vw;
+}
+
+button {
+    margin: 0 0 0 0;
 }
 
 /*defining class formatting*/
@@ -90,17 +105,36 @@ hr {
     padding: 0vh 5vw 0vh 5vw;
 }
 
+.menu {
+    margin: 2vh 0vw 4vh 0vw;
+}
+
+.menu_items {
+    text-align: center;
+}
+
+.menu_items a {
+    padding: 1vh 2vw 1vh 2vw;
+    border-radius: 6pt;
+}
+
 .menu_items a:hover {
     background-color: var(--hover-col);
+    color: var(--curr-col);
 }
 
 .current_page {
-    background-color: var(--curr-col);
+    background-color: var(--text-col);
+    color: var(--curr-col);
+}
+
+.social_media {
+    text-align: center;
 }
 
 .portrait {
-    width: 43.2vh;
-    height: 54.0vh;
+    width: 35.2vh;
+    height: 44vh;
     border-radius: 1vw;
     margin: 1vh 1vw 1vh 1vw;
 }
@@ -164,6 +198,36 @@ hr {
     left: 50vw;
 }
 
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 3vh;
+    width: 0;
+    z-index: 1;
+    left: 50vw;
+    margin-left: -6vw;
+    border: medium solid black;
+    border-width: 2vh 0 2vh 1vw;
+    border-color: transparent transparent transparent black;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 3vh;
+    width: 0;
+    z-index: 1;
+    left: 0vw;
+    margin-left: 5vw;
+    border: medium solid black;
+    border-width: 2vh 1vw 2vh 0;
+    border-color: transparent black transparent transparent;
+}
+
 /* Fix the circle for containers on the right side */
 .right::after {
     left: 0vw;
@@ -176,4 +240,18 @@ hr {
     width: 35vw;
     margin: 0 7.5vw 0 7.5vw;
     border-radius: 0.5vw;
+}
+
+.hover:after {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0pt;
+    transition: font-size 0.2s linear 0.0s, opacity 0.5s linear 0.2s;
+}
+
+.hover:hover:after {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14pt;
 }

@@ -22,7 +22,7 @@ function on_resize() {
 }
 
 //defining property relations
-const rel_text = x => 10 + ( 8 )*( x-300 )/( 1600-300 );
+const rel_text = x => 8 + ( 8 )*( x-300 )/( 1600-300 );
 const rel_h1 = x => 16 + ( 8 )*( x-300 )/( 1300 );
 const rel_h2 = x => 12 + ( 8 )*( x-300 )/( 1300 );
 const rel_h3 = x => 14 + ( 8 )*( x-300 )/( 1300 );
